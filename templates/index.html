@@ -1,20 +1,20 @@
-{% extends "base-structure.html" %}
+{% extends "home-base.html" %}
 
 {% block title %}
-Home
+Home Page
 {% endblock %}
 
 {% block head%}
   {{super()}}
   <style>
     body {
-      padding-top: 54px;
+      padding-top: 100px;
     }
   </style>
 {% endblock %}
 
 {% block page_content %}
 <div class="container">
-   <h1 class="mt-5"><i class="fa fa-book" aria-hidden="true"></i> Title Here</h1>
+   <h1 class="mt-5 text-center"><i class="fa fa-movie" aria-hidden="true"></i> Movies</h1>
  </div>
 {% endblock %}

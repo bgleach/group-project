@@ -1,0 +1,28 @@
+{% extends "home-base.html"%}
+{% block title %}About Us{% endblock %}
+
+{% block head%}
+  {{ super() }}
+  <style>
+    body {
+      padding-top: 50px;
+    }
+  </style>
+{% endblock%}
+
+{% block page_content%}
+  <!-- Page Content -->
+  <div class="container">
+    <h2 class="mt-5">About Us</h2>
+    <ul class ="list-unstyled">
+      <li><i class="fa fa-user" aria-hidden="true"></i> : Haifeng Wang</li>
+      <li><i class="fa fa-envelope" aria-hidden="true"></i> : haifeng@udel.edu</li>
+      <li><i class="fa fa-phone" aria-hidden="true"></i> : 302-766-5518</li>
+    </ul>
+    <ul class ="list-unstyled">
+      <li><i class="fa fa-user" aria-hidden="true"></i> : Bryan Leach</li>
+      <li><i class="fa fa-envelope" aria-hidden="true"></i> : </li>
+      <li><i class="fa fa-phone" aria-hidden="true"></i> : 201-914-8691</li>
+    </ul>
+  </div>
+{% endblock%}
