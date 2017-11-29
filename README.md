@@ -7,6 +7,6 @@ A director can be involved with many films, but a film can only be associated wi
 
 The columns for the Film table will be:
   1. FilmID, Name, Year, Director, and Description
-  
+
 The columns for the Director table will be:
-  1. ID, Name
+  1. ID, Name, Age，Gender
