@@ -3,23 +3,21 @@
 
 {% block head%}
   {{ super() }}
-  <style>
-    body {
-      padding-top: 50px;
-    }
-  </style>
 {% endblock%}
 
 {% block page_content%}
   <!-- Page Content -->
   <div class="container">
-    <h2 class="mt-5">About Us</h2>
-    <ul class ="list-unstyled">
+    <h2 class="mt-5" style="padding-bottom:20px;">About Us</h2>
+
+    <ul class ="list-unstyled " >
+      <a class="rounded float-left" style="padding-right:20px" ><img src="{{ url_for('static', filename='img/haifeng.jpeg') }}" alt="haifeng" width="100"  ></a>
       <li><i class="fa fa-user" aria-hidden="true"></i> : Haifeng Wang</li>
       <li><i class="fa fa-envelope" aria-hidden="true"></i> : haifeng@udel.edu</li>
       <li><i class="fa fa-phone" aria-hidden="true"></i> : 302-766-5518</li>
     </ul>
-    <ul class ="list-unstyled">
+    <ul class ="list-unstyled" style="padding-top:50px;">
+      <a class="rounded float-left" style="padding-top:5px; padding-right:20px" ><img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="yourname" width="100" ></a>
       <li><i class="fa fa-user" aria-hidden="true"></i> : Bryan Leach</li>
       <li><i class="fa fa-envelope" aria-hidden="true"></i> : bgleach@udel.edu</li>
       <li><i class="fa fa-phone" aria-hidden="true"></i> : 201-914-8691</li>

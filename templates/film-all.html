@@ -1,0 +1,69 @@
+{% extends "home-base.html"%}
+{% block title %}All Films{% endblock %}
+{% block page_content%}
+
+<!-- Page Content -->
+<div class="container">
+  <h1 class="mt-5"><i class="fa fa-film" aria-hidden="true"></i> Films:</h1>
+  <div class="row bottom-margin">
+    <a href="/film/add" class="btn btn-primary" role="button" aria-disabled="true">Add Films</a>
+  </div>
+  {% if films %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Director</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for film in films %}
+      <tr>
+        <th scope="row">{{film.id}}</th>
+        <td>{{film.name}}</td>
+        <td>{{film.year}}</td>
+        <td>{{film.director.name}}</td>
+        <td>
+          <!--  view lyrics button trigger modal -->
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{film.id}}">
+                View
+              </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="{{film.id}}" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">{{film.name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body">
+                  <p>{{film.description}}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <a href="/film/edit/{{film.id}}" class="btn btn-success" role="button" aria-disabled="true">Edit</a>
+          <a href="/film/delete/{{film.id}}" class="btn btn-danger" role="button" aria-disabled="true">Delete</a>
+        </td>
+      </tr>
+
+      {% endfor%}
+    </tbody>
+  </table>
+  {% else %}
+  <h3>There are no films in the database yet!!</h3> {% endif %}
+</div>
+
+{% endblock%}
