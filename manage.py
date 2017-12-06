@@ -4,6 +4,7 @@ from base import app, db, Director, Film
 
 manager = Manager(app)
 
+
 @manager.command
 def deploy():
     db.drop_all()
@@ -21,6 +22,7 @@ def deploy():
     db.session.add(film2)
     db.session.add(film3)
     db.session.commit()
+    
 
 if __name__ == '__main__':
     manager.run()
