@@ -25,3 +25,14 @@ The columns for the Film table will be:
   1|	*Ang Lee*	| 63 | Male
   2|	*Christopher Nolan*|47|Male
   3|	*Kathryn Bigelow*|66|Female
+
+In order to run our application:
+  1. Pull file from GitHub
+  2. Open GIT command
+  3. Locate file location
+  4. run the following lines:
+    pip install virtualenv
+    install -r requirements.txt
+    venv\Scripts\activate
+    python manage.py deploy
+    python manage.py runserver -d 
