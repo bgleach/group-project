@@ -30,9 +30,9 @@ In order to run our application:
   1. Pull file from GitHub
   2. Open GIT command
   3. Locate file location
-  4. run the following lines:
-    pip install virtualenv
-    install -r requirements.txt
-    venv\Scripts\activate
-    python manage.py deploy
-    python manage.py runserver -d 
+  4. Run the following lines:
+    * pip install virtualenv
+    * install -r requirements.txt
+    * venv\Scripts\activate
+    * python manage.py deploy
+    * python manage.py runserver -d 
