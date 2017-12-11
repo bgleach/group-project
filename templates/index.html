@@ -11,6 +11,10 @@ Home Page
 
 {% block page_content %}
 <div class="container">
-   <h1 class="mt-5 text-center"><i class="fa fa-movie" aria-hidden="true"></i> Movies</h1>
+   <h1 class="mt-5 text-center" style="padding-top: 30px"><i class="fa fa-film" aria-hidden="true"></i> Movies</h1>
  </div>
+<a class="rounded float-left" style="padding-top:80px; padding-left:100px" ><img src="{{ url_for('static', filename='img/dunkirk.jpeg') }}" alt="Bryan" width="200" ></a>
+<a class="rounded float-left" style="padding-top:80px; padding-left:100px" ><img src="{{ url_for('static', filename='img/harry-portter.jpg') }}" alt="Bryan" width="200" ></a>
+<a class="rounded float-left" style="padding-top:80px; padding-left:100px" ><img src="{{ url_for('static', filename='img/shawshank.jpeg') }}" alt="Bryan" width="200" ></a>
+<a class="rounded float-left" style="padding-top:80px; padding-left:100px" ><img src="{{ url_for('static', filename='img/inception.jpg') }}" alt="Bryan" width="200" ></a>
 {% endblock %}

@@ -56,6 +56,32 @@ def add_directors():
         db.session.commit()
         return redirect(url_for('show_all_directors'))
 
+@app.route('/director/edit/<int:id>', methods=['GET', 'POST'])
+def edit_director(id):
+    director = Director.query.filter_by(id=id).first()
+    if request.method == 'GET':
+        return render_template('director-edit.html', director=director)
+    if request.method == 'POST':
+        # update data based on the form data
+        director.name = request.form['name']
+        director.age = request.form['age']
+        director.gender = request.form['gender']
+        # update the database
+        db.session.commit()
+        return redirect(url_for('show_all_directors'))
+
+@app.route('/director/delete/<int:id>', methods=['GET', 'POST'])
+def delete_director(id):
+    director= Director.query.filter_by(id=id).first()
+    if request.method == 'GET':
+        return render_template('director-delete.html', director=director)
+    if request.method == 'POST':
+        # delete the artist by id
+        # all related songs are deleted as well
+        db.session.delete(director)
+        db.session.commit()
+        return redirect(url_for('show_all_directors'))
+
 @app.route('/films')
 def show_all_films():
     films = Film.query.all()
@@ -79,6 +105,36 @@ def add_films():
         db.session.commit()
         return redirect(url_for('show_all_films'))
 
+@app.route('/film/edit/<int:id>', methods=['GET', 'POST'])
+def edit_song(id):
+    film = Film.query.filter_by(id=id).first()
+    directors = Director.query.all()
+    if request.method == 'GET':
+        return render_template('film-edit.html', film=film, directors=directors)
+    if request.method == 'POST':
+        # update data based on the form data
+        film.name = request.form['name']
+        film.year = request.form['year']
+        film.description = request.form['description']
+        director_name = request.form['director']
+        director = Director.query.filter_by(name=director_name).first()
+        film.director = director
+        # update the database
+        db.session.commit()
+        return redirect(url_for('show_all_films'))
+
+@app.route('/film/delete/<int:id>', methods=['GET', 'POST'])
+def delete_course(id):
+    film = Film.query.filter_by(id=id).first()
+    directors = Director.query.all()
+    if request.method == 'GET':
+        return render_template('film-delete.html', film=film, directors=directors)
+    if request.method == 'POST':
+        # delete the artist by id
+        # all related songs are deleted as well
+        db.session.delete(film)
+        db.session.commit()
+        return redirect(url_for('show_all_films'))
 
 
 
